@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ✅ 全局背景与字体设置 */
+html,
+body {
+    @apply bg-gray-50 text-gray-900 font-sans;
+    font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ✅ 为固定导航栏留出安全距离（所有页面自动避开 NavBar） */
+body {
+    padding-top: 1rem;
+    /* ≈ 96px，对应 pt-24 */
+}
+
+/* ✅ 全局标题风格 */
+h1,
+h2,
+h3 {
+    @apply font-bold text-gray-900;
+}
+
+h1 {
+    @apply text-3xl;
+}
+
+h2 {
+    @apply text-2xl;
+}
+
+h3 {
+    @apply text-xl;
+}
+
+/* ✅ 按钮全局样式：统一圆角与动画 */
+button {
+    @apply rounded-lg transition-all duration-200;
+}
+
+/* ✅ 链接统一样式（防止蓝色下划线） */
+a {
+    @apply text-gray-800 no-underline hover:text-gray-900 transition;
+}
+
+/* ✅ SweetAlert 弹窗字体更统一 */
+.swal2-popup {
+    font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+/* ✅ 动画：Admin 下拉菜单轻微淡入效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.15s ease-out;
+}
+
+/* ✅ AI 推荐模块轻微阴影和边框柔化 */
+.ai-card {
+    @apply bg-white border border-purple-100 rounded-lg shadow-sm hover:shadow-md transition;
+}
+
+/* ===== 全局基础 ===== */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ===== 背景缓慢放大动画 ===== */
+@keyframes zoomInSlow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.12);
+        /* 放大 12% */
+    }
+}
+
+.bg-zoom {
+    animation: zoomInSlow 18s ease-in-out infinite alternate;
+}
